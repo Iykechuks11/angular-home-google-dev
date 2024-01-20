@@ -1,0 +1,12 @@
+<section>
+    <form>
+        <input type="text" placeholder="Filter by city" [(ngModel)]="data" name="first"/>
+        <button class="primary" type="button">Search</button>
+    </form>
+</section>
+
+<!-- Search Result -->
+<section class="results">
+    <app-housing-location></app-housing-location>
+    <h1>{{data}}</h1>
+</section>
