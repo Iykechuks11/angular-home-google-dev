@@ -4,6 +4,7 @@ import { HousingLocation } from './app/housing-location';
 @Injectable({
   providedIn: 'root'
 })
+
 export class HousingService {
   readonly baseUrl: string = 'https://angular.dev/assets/tutorials/common';
 
@@ -122,11 +123,15 @@ export class HousingService {
     }
   ];
 
-  getAllHousingLocations() : HousingLocation[] {
+  getAllHousingLocations(): HousingLocation[] {
     return this.housingLocationList;
   }
 
-  getHousingLocationId(id: Number) : HousingLocation | undefined {
+  getHousingLocationId(id: Number): HousingLocation | undefined {
     return this.housingLocationList.find(housingLocation => housingLocation.id === id);
+  }
+
+  submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(firstName + " " + lastName + " " + email)
   }
 }

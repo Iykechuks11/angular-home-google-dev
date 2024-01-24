@@ -1,4 +1,4 @@
-<p>details works! {{housingLocation?.id}}</p>
+<!-- <p>details works! {{housingLocation?.id}}</p> -->
 
 <article>
     <img [src]="housingLocation?.photo" [alt]="housingLocation?.name" class="listing-photo">
@@ -19,6 +19,18 @@
 
     <section class="listing-apply">
         <h2 class="section-heading">Apply now to live here</h2>
-        <button class="primary" type="button">Apply now</button>
+        <!-- <button class="primary" type="button">Apply now</button> -->
+        <form [formGroup]="applyForm" (submit)="submitApplication()">
+            <label for="first-name">First Name</label>
+            <input type="text" formControlName="firstName" id="first-name">
+
+            <label for="last-name">Last Name</label>
+            <input type="text" formControlName="lastName" id="last-name">
+
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" id="email">
+
+            <button type="submit" class="primary">Apply Now</button>
+        </form>
     </section>
 </article>
